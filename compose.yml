@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  threejs:
+    build: .
+    command: pnpm run start --host
+    volumes:
+      - .:/threejs
+    ports:
+      - "3000:3000"
