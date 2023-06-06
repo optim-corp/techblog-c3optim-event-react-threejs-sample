@@ -1,8 +1,11 @@
+// パッケージのインポート
 import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 
+// コンポーネントのインポート
 import Footer from "./Footer";
 
+// caaのインポート
 import "./App.css";
 
 function App() {
