@@ -1,19 +1,23 @@
 // パッケージのインポート
-import { useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { useState } from 'react'
+import { Canvas } from '@react-three/fiber'
 
 // コンポーネントのインポート
-import Footer from "./Footer";
-import ModelView from "./ModelView";
+import Footer from './Footer'
+import ModelView from './ModelView'
 
 // caaのインポート
-import "./App.css";
+import './App.css'
 
 function App() {
   // 表示する3Dモデルのインデックスの状態
-  const [selectedModel, setSelectedModel] = useState<number>(0);
+  const [selectedModel, setSelectedModel] = useState<number>(0)
   // 3Dモデルのパスを保持する変数
-  const models: string[] = ["/model1.obj", "/model2.obj", "/model3.obj"];
+  const models: string[] = [
+    'https://public.compositecomputer.club/c3optim/model1.obj',
+    'https://public.compositecomputer.club/c3optim/model2.obj',
+    'https://public.compositecomputer.club/c3optim/model3.obj',
+  ]
 
   return (
     <div className="App">
@@ -23,16 +27,16 @@ function App() {
         {models.map((_, index) => {
           return (
             <div
-              className={`${index === selectedModel ? "selected" : ""}`}
+              className={`${index === selectedModel ? 'selected' : ''}`}
               key={index}
               // クリックイベントの処理
               onClick={() => {
-                setSelectedModel(index);
+                setSelectedModel(index)
               }}
             >
               {index + 1}
             </div>
-          );
+          )
         })}
       </div>
       <Canvas className="canvas">
@@ -40,7 +44,7 @@ function App() {
       </Canvas>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
